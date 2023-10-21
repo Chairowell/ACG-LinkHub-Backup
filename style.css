@@ -1,0 +1,41 @@
+.toc-list{
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 6px;
+}
+.toc-list > li:not(ul){
+    padding: 6px 12px;
+    border: 3px solid #707070;
+    border-radius: 6px;
+    /* background: #000; */
+    list-style:none;
+}
+.toc-list > li:first-child{
+    display: none;
+}
+.toc-list > li:nth-child(2){
+    z-index: 1;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    padding: 1px 3px;
+    background-color: #fff;
+}
+.toc-list > li:nth-child(2) a{
+    color: #3985f7;
+}
+.toc-list a{
+    text-decoration: none;
+}
+h1,h2{
+    margin: 16px 0 !important;
+    padding-top: 36px !important;
+}
+/* 移动版精简目录 */
+@media screen and (max-width: 768px){
+	.toc-list > li ul{
+        display: none;
+    }
+}
