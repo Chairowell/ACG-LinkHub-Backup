@@ -1,41 +1,32 @@
 User-agent: Baiduspider
 Disallow: /
-User-agent: Sosospider
+User-agent: Bingbot
+Disallow: /script.js
+User-agent: Sogou web spider
 Disallow: /
-User-agent: sogou spider
+User-agent: Sosospider
 Disallow: /
 User-agent: YodaoBot
 Disallow: /
+User-agent: 360Spider
+Disallow: /
+User-agent: YisouSpider
+Disallow: /
 User-agent: Googlebot
-Disallow: 
-User-agent: Bingbot
-Disallow: 
-User-agent: Slurp
-Disallow: 
-User-agent: Teoma
-Disallow: 
+Disallow: /
+User-agent: teoma
+Disallow: /
 User-agent: ia_archiver
-Disallow: 
+Disallow: /
 User-agent: twiceler
-Disallow: 
-User-agent: MSNBot
-Disallow: 
-User-agent: Scrubby
-Disallow: 
+Disallow: /
 User-agent: Robozilla
-Disallow: 
+Disallow: /
 User-agent: Gigabot
-Disallow: 
-User-agent: googlebot-image
 Disallow: /
-User-agent: googlebot-mobile
-Disallow: /
-User-agent: yahoo-mmcrawler
-Disallow: /
-User-agent: yahoo-blogs/v3.9
-Disallow: /
-User-agent: psbot
+User-agent: Mediapartners-Google
 Disallow: /
 Crawl-delay: 120
-Disallow: /
+User-agent: *
+Disallow: /script.js
 Sitemap: http://link.chairo.cc/sitemap.xml
