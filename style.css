@@ -12,10 +12,10 @@
     /* background: #000; */
     list-style:none;
 }
-.toc-list > li:first-child{
+/* .toc-list > li:nth-child(2){
     display: none;
-}
-.toc-list > li:nth-child(2){
+} */
+.toc-list > li:nth-child(1){
     z-index: 1;
     position: fixed;
     right: 30px;
@@ -23,13 +23,13 @@
     padding: 1px 3px;
     background-color: #fff;
 }
-.toc-list > li:nth-child(2) a{
+.toc-list > li:nth-child(1) a{
     color: #3985f7;
 }
 .toc-list a{
     text-decoration: none;
 }
-h1,h2{
+h2,h3{
     margin: 16px 0 !important;
     padding-top: 36px !important;
 }

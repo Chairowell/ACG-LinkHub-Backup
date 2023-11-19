@@ -116,7 +116,7 @@ function getLatencyColor(responseTime) {
 // });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const h1Headings = document.querySelectorAll('h1');
+    const h2Headings = document.querySelectorAll('h2');
 
     const tocContainer = document.createElement('div');
     tocContainer.className = 'toc-container';
@@ -129,46 +129,46 @@ document.addEventListener('DOMContentLoaded', function () {
     const tocList = document.createElement('ul');
     tocList.className = 'toc-list';
 
-    h1Headings.forEach((h1Heading, index) => {
-        const h1Anchor = document.createElement('a');
-        h1Anchor.id = `toc-h1-${index}`;
+    h2Headings.forEach((h2Heading, index) => {
+        const h2Anchor = document.createElement('a');
+        h2Anchor.id = `toc-h2-${index}`;
 
-        const h1Item = document.createElement('li');
-        const h1Link = document.createElement('a');
-        h1Link.href = `#toc-h1-${index}`;
-        h1Link.textContent = h1Heading.textContent;
-        h1Item.appendChild(h1Link);
+        const h2Item = document.createElement('li');
+        const h2Link = document.createElement('a');
+        h2Link.href = `#toc-h2-${index}`;
+        h2Link.textContent = h2Heading.textContent;
+        h2Item.appendChild(h2Link);
 
-        h1Link.addEventListener('click', function (event) {
+        h2Link.addEventListener('click', function (event) {
             event.preventDefault();
-            h1Heading.scrollIntoView({ behavior: 'smooth' });
+            h2Heading.scrollIntoView({ behavior: 'smooth' });
         });
 
-        tocList.appendChild(h1Item);
+        tocList.appendChild(h2Item);
 
-        const h2Headings = getAssociatedH2Headings(h1Heading);
-        if (h2Headings.length > 0) {
-            const h2List = document.createElement('ul');
-            h2Headings.forEach((h2Heading, h2Index) => {
-                const h2Anchor = document.createElement('a');
-                h2Anchor.id = `toc-h2-${index}-${h2Index}`;
+        const h3Headings = getAssociatedH3Headings(h2Heading);
+        if (h3Headings.length > 0) {
+            const h3List = document.createElement('ul');
+            h3Headings.forEach((h3Heading, h3Index) => {
+                const h3Anchor = document.createElement('a');
+                h3Anchor.id = `toc-h3-${index}-${h3Index}`;
 
-                const h2Item = document.createElement('li');
-                const h2Link = document.createElement('a');
-                h2Link.href = `#toc-h2-${index}-${h2Index}`;
-                h2Link.textContent = h2Heading.textContent;
-                h2Item.appendChild(h2Link);
+                const h3Item = document.createElement('li');
+                const h3Link = document.createElement('a');
+                h3Link.href = `#toc-h3-${index}-${h3Index}`;
+                h3Link.textContent = h3Heading.textContent;
+                h3Item.appendChild(h3Link);
 
-                h2Link.addEventListener('click', function (event) {
+                h3Link.addEventListener('click', function (event) {
                     event.preventDefault();
-                    h2Heading.scrollIntoView({ behavior: 'smooth' });
+                    h3Heading.scrollIntoView({ behavior: 'smooth' });
                 });
 
-                h2List.appendChild(h2Item);
+                h3List.appendChild(h3Item);
             });
 
             // 注释该行可以删除二级目录
-            h1Item.appendChild(h2List);
+            h2Item.appendChild(h3List);
         }
     });
 
@@ -176,14 +176,14 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("directory").appendChild(tocContainer);
 });
 
-function getAssociatedH2Headings(h1Heading) {
-    const h2Headings = [];
-    let currentElement = h1Heading.nextElementSibling;
-    while (currentElement && currentElement.tagName !== 'H1') {
-        if (currentElement.tagName === 'H2') {
-            h2Headings.push(currentElement);
+function getAssociatedH3Headings(h2Heading) {
+    const h3Headings = [];
+    let currentElement = h2Heading.nextElementSibling;
+    while (currentElement && currentElement.tagName !== 'H2') {
+        if (currentElement.tagName === 'H3') {
+            h3Headings.push(currentElement);
         }
         currentElement = currentElement.nextElementSibling;
     }
-    return h2Headings;
+    return h3Headings;
 }
